@@ -1,4 +1,4 @@
-# Kubernetes list secrets
+# Kubernetes decode secret
 
 Quick script to retrieve decoded secret object from a k8s cluster.
 
