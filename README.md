@@ -11,10 +11,10 @@ values escaped:
 
 ```bash
 >> ./secrets sec-name
-Write new secret key-value (leave empty to finish): new_key=*
+Write new secret key-value (leave empty to finish): allowed_hosts=*
 Write new secret key-value (leave empty to finish):
 
-kubectl create secret generic sec-name \
+kubectl delete secret sec-name && kubectl create secret generic sec-name \
   --from-literal=celery_broker_url=amqp://user:pp455w0rd@rabbitmq:5672//
   --from-literal=allowed_hosts='*'
 ```
