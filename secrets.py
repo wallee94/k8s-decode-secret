@@ -20,7 +20,8 @@ def main():
         objs.append((k, v))
         inp = input('Write new secret key-value (leave empty to finish): ')
 
-    cmd = f"kubectl create secret generic {current['metadata']['name']} \\\n"
+    cmd = f'\n\nkubectl delete secret {name} && '
+    cmd += f"kubectl create secret generic {name} \\\n"
     values = [
         f"  --from-literal={k}={shlex.quote(v)} "
         for k, v in objs
